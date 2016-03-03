@@ -1,0 +1,11 @@
+.grid-sizer, .grid-item {
+  width: 20%;
+}
+
+.grid-item-width-2 {
+  width: 40%;
+}
+
+.grid-item img {
+  width: 100%;
+}

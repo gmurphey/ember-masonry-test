@@ -1,5 +1,12 @@
 <h2 id="title">Welcome to Ember</h2>
 
-{{#masonry-grid items=model as |item|}}
-  <img src="{{item.imgsrc}}"><br>
+<p><button {{action "resizeItems"}}>Resize Images</button></p>
+
+{{#masonry-grid items=model columnWidth=".grid-sizer" percentPosition=true customLayout=true as |items grid|}}
+  <div class="grid-sizer"></div>
+  {{#each items as |item|}}
+    {{#masonry-item class=item.classes item=item grid=grid}}
+      <img src="{{item.imgsrc}}">
+    {{/masonry-item}}
+  {{/each}}
 {{/masonry-grid}}

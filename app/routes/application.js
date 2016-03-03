@@ -18,8 +18,10 @@ export default Ember.Route.extend({
 
     Ember.run(() => {
       for (let i = 0; i < 20; i++) {
-        model.pushObject(Object.create({
-          imgsrc: this.get('images')[Math.floor(Math.random() * this.get('images.length'))]
+        model.pushObject(Ember.Object.create({
+          imgsrc: this.get('images')[Math.floor(Math.random() * this.get('images.length'))],
+          classes: `grid-item grid-item-width-${Math.floor(Math.random() * 2) + 1}`,
+          caption: 'test caption'
         }));
       }
     });
